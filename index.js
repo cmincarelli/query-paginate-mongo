@@ -10,7 +10,7 @@ var QueryPageMongo = function (options) {
   let mongoQS = new MongoQS(opts);
 
   return function parse(config){
-    let query = {};
+    let query = {options:{}};
     if(config.populate){
       query.options.populate = config.populate;
       delete config.populate;
