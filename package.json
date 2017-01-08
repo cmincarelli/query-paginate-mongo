@@ -1,0 +1,24 @@
+{
+  "name": "query-paginate-mongo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmincarelli/query-paginate-mongo.git"
+  },
+  "author": "Chris Mincarelli <chrism@theanchorlight.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmincarelli/query-paginate-mongo/issues"
+  },
+  "homepage": "https://github.com/cmincarelli/query-paginate-mongo#readme",
+  "dependencies": {
+    "lodash.merge": "^4.6.0",
+    "mongo-querystring": "^4.1.0",
+    "query-to-mongo": "^0.6.2"
+  }
+}
