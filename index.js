@@ -12,7 +12,7 @@ var QueryPageMongo = function (options) {
   return function parse(config){
     let query = {options:{}};
     if(config.populate){
-      query.options.populate = config.populate;
+      query.options.populate = config.populate.split(',').join(' ');
       delete config.populate;
     }
     let q2 = mongoQS.parse(config);
