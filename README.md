@@ -1,8 +1,7 @@
 # query-paginate-mongo
 
 
-Combines two other great projects: "mongo-querystring", "query-to-mongo".
-
+Combines two other great projects ("mongo-querystring" and "query-to-mongo") and adds population.
 
 ### Sample
 
