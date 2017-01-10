@@ -2,7 +2,7 @@
 let MongoQS = require('mongo-querystring');
 let queryToMongo = require('query-to-mongo');
 let _ = require('lodash');
-let q = require('Q');
+let Q = require('q');
 let QueryPageMongo = function(options) {
     let opts = options || {};
     opts = _.extend({ id: '_id', ignore: ['near', 'bbox', 'after', 'before', 'between'] }, opts);
@@ -26,7 +26,7 @@ let QueryPageMongo = function(options) {
             qtm.criteria = _.extend(qtm.criteria, mqs);
             query = _.extend(query, qtm);
             if (query.criteria.id) {
-                var deferred = q.defer();
+                var deferred = Q.defer();
                 var response = {
                     exec: function(callback) {
                         let ques = {};
@@ -42,14 +42,12 @@ let QueryPageMongo = function(options) {
                                 if (callback) {
                                     callback(null, _docs);
                                 }
-                                console.log(_docs);
                                 return _docs;
                             })
                             .catch(function(error) {
                                 if (callback) {
                                     callback(error);
                                 }
-                                console.log(error);
                                 return error;
                             });
                     }
@@ -62,6 +60,7 @@ let QueryPageMongo = function(options) {
             }
             return collection
                 .count(query.criteria)
+                .exec()
                 .then(function(count) {
                     let response = {
                         setEnvelope: function(envelope, linkPath) {

@@ -16,7 +16,7 @@ let qpm = new QPM({
   custom: {
     bbox:  'location.coords.point', // your geometry field
     near:  'location.coords.point', // your geometry field
-    after:  'updated_at'            // your last modified field
+    after:  'updated_at',           // your last modified field
     before: 'updated_at'            // your last modified field
   }
 });
