@@ -24,7 +24,7 @@ let QueryPageMongo = function(options) {
                 delete mqs[field];
             });
             qtm.criteria = _.extend(qtm.criteria, mqs);
-            query = _.extend(query, qtm);
+            query = _.merge(query, qtm);
             if (query.criteria.id) {
                 var deferred = Q.defer();
                 var response = {
@@ -34,6 +34,9 @@ let QueryPageMongo = function(options) {
                         let docs = collection.findOne(ques);
                         if (query.options.fields) {
                             docs.select(query.options.fields);
+                        }
+                        if (query.options.populate) {
+                            docs.populate(query.options.populate);
                         }
                         let that = this;
                         return docs
@@ -85,6 +88,9 @@ let QueryPageMongo = function(options) {
                             }
                             if (query.options.sort) {
                                 docs.sort(query.options.sort);
+                            }
+                            if (query.options.populate) {
+                                docs.populate(query.options.populate);
                             }
                             if (query.options.limit) {
                                 docs.limit(query.options.limit);
