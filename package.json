@@ -17,13 +17,13 @@
   },
   "homepage": "https://github.com/cmincarelli/query-paginate-mongo#readme",
   "dependencies": {
-    "lodash": "^4.17.4",
-    "mongo-querystring": "^4.1.0",
-    "q": "^1.4.1",
-    "query-to-mongo": "^0.6.2"
+    "lodash": "^4.17.21",
+    "mongo-querystring": "^4.1.1",
+    "q": "^1.5.1",
+    "query-to-mongo": "^0.10.2"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mongoose": "^4.7.6"
+    "chai": "^4.3.7",
+    "mongoose": "^6.9.0"
   }
 }
